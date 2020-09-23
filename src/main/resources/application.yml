@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8021
 spring:
   datasource:
     url: jdbc:mysql://47.103.5.82:3306/Cowboy?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
@@ -37,7 +37,7 @@ spring:
   mvc:
     stastatic-path-pattern: /**
   resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/upload/,file:/upload,file:/upload/fruom,file:/upload/images/userpic,file:/upload/images/honer,file:/upload/images/homepage,file:/upload/images/lunbo
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/upload/,file:/upload,file:/upload/fruom,file:/upload/images/userpic,file:/upload/images/honer,file:/upload/images/homepage,file:/upload/images/lunbo,classpath:/assets/
   servlet:
     multipart:
       max-file-size: -1

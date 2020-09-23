@@ -17,9 +17,9 @@ public class ForwardController {
      *
      * @return
      */
-    @RequestMapping("/index1")
+    @RequestMapping("/index")
     public String toIndex() {
-        return "index1";
+        return "index";
 
     }
 
