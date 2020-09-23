@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cowboy.cowboy.dao.MemberMapper" >
+  <resultMap id="BaseResultMap" type="com.cowboy.cowboy.model.Member" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="hobby" property="hobby" jdbcType="VARCHAR" />
+    <result column="height_weight" property="heightWeight" jdbcType="VARCHAR" />
+    <result column="face" property="face" jdbcType="VARCHAR" />
+    <result column="style" property="style" jdbcType="VARCHAR" />
+    <result column="character" property="character" jdbcType="VARCHAR" />
+    <result column="tobacco_alcohol" property="tobaccoAlcohol" jdbcType="VARCHAR" />
+    <result column="food" property="food" jdbcType="VARCHAR" />
+    <result column="similar_artists" property="similarArtists" jdbcType="VARCHAR" />
+    <result column="skill" property="skill" jdbcType="VARCHAR" />
+    <result column="self_introduction" property="selfIntroduction" jdbcType="VARCHAR" />
+    <result column="store_reviews" property="storeReviews" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, description, age, hobby, height_weight, face, style, character, tobacco_alcohol, 
+    food, similar_artists, skill, self_introduction, store_reviews
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cowboy.cowboy.model.MemberExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from member
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from member
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cowboy.cowboy.model.MemberExample" >
+    delete from member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.cowboy.cowboy.model.Member" >
+    insert into member (id, name, description, 
+      age, hobby, height_weight, 
+      face, style, character, 
+      tobacco_alcohol, food, similar_artists, 
+      skill, self_introduction, store_reviews
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{hobby,jdbcType=VARCHAR}, #{heightWeight,jdbcType=VARCHAR}, 
+      #{face,jdbcType=VARCHAR}, #{style,jdbcType=VARCHAR}, #{character,jdbcType=VARCHAR}, 
+      #{tobaccoAlcohol,jdbcType=VARCHAR}, #{food,jdbcType=VARCHAR}, #{similarArtists,jdbcType=VARCHAR}, 
+      #{skill,jdbcType=VARCHAR}, #{selfIntroduction,jdbcType=VARCHAR}, #{storeReviews,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cowboy.cowboy.model.Member" >
+    insert into member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="hobby != null" >
+        hobby,
+      </if>
+      <if test="heightWeight != null" >
+        height_weight,
+      </if>
+      <if test="face != null" >
+        face,
+      </if>
+      <if test="style != null" >
+        style,
+      </if>
+      <if test="character != null" >
+        character,
+      </if>
+      <if test="tobaccoAlcohol != null" >
+        tobacco_alcohol,
+      </if>
+      <if test="food != null" >
+        food,
+      </if>
+      <if test="similarArtists != null" >
+        similar_artists,
+      </if>
+      <if test="skill != null" >
+        skill,
+      </if>
+      <if test="selfIntroduction != null" >
+        self_introduction,
+      </if>
+      <if test="storeReviews != null" >
+        store_reviews,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="hobby != null" >
+        #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="heightWeight != null" >
+        #{heightWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="face != null" >
+        #{face,jdbcType=VARCHAR},
+      </if>
+      <if test="style != null" >
+        #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="character != null" >
+        #{character,jdbcType=VARCHAR},
+      </if>
+      <if test="tobaccoAlcohol != null" >
+        #{tobaccoAlcohol,jdbcType=VARCHAR},
+      </if>
+      <if test="food != null" >
+        #{food,jdbcType=VARCHAR},
+      </if>
+      <if test="similarArtists != null" >
+        #{similarArtists,jdbcType=VARCHAR},
+      </if>
+      <if test="skill != null" >
+        #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="selfIntroduction != null" >
+        #{selfIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="storeReviews != null" >
+        #{storeReviews,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cowboy.cowboy.model.MemberExample" resultType="java.lang.Integer" >
+    select count(*) from member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update member
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.hobby != null" >
+        hobby = #{record.hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.heightWeight != null" >
+        height_weight = #{record.heightWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="record.face != null" >
+        face = #{record.face,jdbcType=VARCHAR},
+      </if>
+      <if test="record.style != null" >
+        style = #{record.style,jdbcType=VARCHAR},
+      </if>
+      <if test="record.character != null" >
+        character = #{record.character,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tobaccoAlcohol != null" >
+        tobacco_alcohol = #{record.tobaccoAlcohol,jdbcType=VARCHAR},
+      </if>
+      <if test="record.food != null" >
+        food = #{record.food,jdbcType=VARCHAR},
+      </if>
+      <if test="record.similarArtists != null" >
+        similar_artists = #{record.similarArtists,jdbcType=VARCHAR},
+      </if>
+      <if test="record.skill != null" >
+        skill = #{record.skill,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selfIntroduction != null" >
+        self_introduction = #{record.selfIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeReviews != null" >
+        store_reviews = #{record.storeReviews,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update member
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      hobby = #{record.hobby,jdbcType=VARCHAR},
+      height_weight = #{record.heightWeight,jdbcType=VARCHAR},
+      face = #{record.face,jdbcType=VARCHAR},
+      style = #{record.style,jdbcType=VARCHAR},
+      character = #{record.character,jdbcType=VARCHAR},
+      tobacco_alcohol = #{record.tobaccoAlcohol,jdbcType=VARCHAR},
+      food = #{record.food,jdbcType=VARCHAR},
+      similar_artists = #{record.similarArtists,jdbcType=VARCHAR},
+      skill = #{record.skill,jdbcType=VARCHAR},
+      self_introduction = #{record.selfIntroduction,jdbcType=VARCHAR},
+      store_reviews = #{record.storeReviews,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cowboy.cowboy.model.Member" >
+    update member
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="hobby != null" >
+        hobby = #{hobby,jdbcType=VARCHAR},
+      </if>
+      <if test="heightWeight != null" >
+        height_weight = #{heightWeight,jdbcType=VARCHAR},
+      </if>
+      <if test="face != null" >
+        face = #{face,jdbcType=VARCHAR},
+      </if>
+      <if test="style != null" >
+        style = #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="character != null" >
+        character = #{character,jdbcType=VARCHAR},
+      </if>
+      <if test="tobaccoAlcohol != null" >
+        tobacco_alcohol = #{tobaccoAlcohol,jdbcType=VARCHAR},
+      </if>
+      <if test="food != null" >
+        food = #{food,jdbcType=VARCHAR},
+      </if>
+      <if test="similarArtists != null" >
+        similar_artists = #{similarArtists,jdbcType=VARCHAR},
+      </if>
+      <if test="skill != null" >
+        skill = #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="selfIntroduction != null" >
+        self_introduction = #{selfIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="storeReviews != null" >
+        store_reviews = #{storeReviews,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cowboy.cowboy.model.Member" >
+    update member
+    set name = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      hobby = #{hobby,jdbcType=VARCHAR},
+      height_weight = #{heightWeight,jdbcType=VARCHAR},
+      face = #{face,jdbcType=VARCHAR},
+      style = #{style,jdbcType=VARCHAR},
+      character = #{character,jdbcType=VARCHAR},
+      tobacco_alcohol = #{tobaccoAlcohol,jdbcType=VARCHAR},
+      food = #{food,jdbcType=VARCHAR},
+      similar_artists = #{similarArtists,jdbcType=VARCHAR},
+      skill = #{skill,jdbcType=VARCHAR},
+      self_introduction = #{selfIntroduction,jdbcType=VARCHAR},
+      store_reviews = #{storeReviews,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
