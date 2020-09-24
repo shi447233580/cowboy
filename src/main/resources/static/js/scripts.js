@@ -261,7 +261,7 @@
 
         if (firstColHeight > secondColHeight) {
             secondCol.css({
-                "height": firstColHeight + 1 + "px"
+                "height": secondColHeight + 1 + "px"
             })
         } else {
             firstCol.css({
