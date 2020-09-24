@@ -22,6 +22,36 @@ public class ForwardController {
         return "index";
 
     }
+    /**
+     * 跳转至首页2
+     *
+     * @return
+     */
+    @RequestMapping("/index2")
+    public String toIndex2() {
+        return "index2";
+
+    }
+    /**
+     * 跳转至首页3
+     *
+     * @return
+     */
+    @RequestMapping("/index3")
+    public String toIndex3() {
+        return "index3";
+
+    }
+    /**
+     * 跳转至404
+     *
+     * @return
+     */
+    @RequestMapping("/404")
+    public String to404() {
+        return "404";
+
+    }
 
     /**
      * 上传头像页面
