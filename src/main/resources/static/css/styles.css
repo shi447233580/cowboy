@@ -93,11 +93,11 @@ ul{
 
 .mb-30{margin-bottom: 30px;}
 
-.bg-img-1{background: url(images/bg/1.jpg)no-repeat center center / cover}
-.bg-img-2{background: url(images/bg/2.jpg)no-repeat center center / cover}
-.bg-img-3{background: url(images/bg/3.jpg)no-repeat center center / cover}
-.bg-img-4{background: url(images/bg/4.jpg)no-repeat center center / cover}
-.bg-img-5{background: url(images/bg/6.jpg)no-repeat center center / cover}
+.bg-img-1{background: url(/images/bg/1.jpg)no-repeat center center / cover}
+.bg-img-2{background: url(/images/bg/2.jpg)no-repeat center center / cover}
+.bg-img-3{background: url(/images/bg/3.jpg)no-repeat center center / cover}
+.bg-img-4{background: url(/images/bg/4.jpg)no-repeat center center / cover}
+.bg-img-5{background: url(/images/bg/6.jpg)no-repeat center center / cover}
 
 .black-opacity{
   position: relative;
@@ -2030,7 +2030,7 @@ a.appoinment-btn:hover{
   position: relative;
 }
 .checkout-form .panel-default a::before {
-    background: rgba(0, 0, 0, 0) url(images/image-1.png) no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url(/images/image-1.png) no-repeat scroll center center / cover;
     border-radius: 5px;
     content: "";
     height: 25px;

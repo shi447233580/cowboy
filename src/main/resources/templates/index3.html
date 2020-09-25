@@ -54,14 +54,14 @@
                                 <div class="col-md-8 hidden-sm hidden-xs">
                                     <div class="mainmenu text-right">
                                         <ul id="navigation">
-                                            <li class="active"><a href="index.html">HOME</a>
+                                            <li class="active"><a href="index.html">首页</a>
                                                 <ul>
                                                     <li><a href="index.html">Home One</a></li>
                                                     <li><a href="index2.html">Home Two</a></li>
                                                     <li class="active"><a href="index3.html">Home Three</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="service.html">Service</a>
+                                            <li><a href="service.html">Therapist</a>
                                                 <ul>
                                                     <li><a href="service.html">Service One</a></li>
                                                     <li><a href="service2.html">Service Two</a></li>
@@ -387,29 +387,21 @@
                                 <p> Sed vitae sem feugiat, condimentum ligula at, rhoncus purus. 
 In volutpat in metus sit amet porta.</p>
                             </div>
-                            <form action="#">
+                            <form action="/upload" target="nm_iframe">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Name</p>
-                                        <input type="text" placeholder="First Name">
+                                        <input name="name" type="text" placeholder="Name">
                                     </div>
                                     <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Telephone Number</p>
-                                        <input type="number" placeholder="number">
+                                        <input name = "number" type="number" placeholder="number">
                                     </div>
                                     <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Select Date</p>
-                                        <select>
-                                            <option value="Select Date">Select Date</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        <input name = "time" type="datetime-local" placeholder="datetime">
                                     </div>
-                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                   <!-- <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Time</p>
                                         <select>
                                             <option value="Select Time">Select Time</option>
@@ -420,14 +412,14 @@ In volutpat in metus sit amet porta.</p>
                                             <option value="4.30">4.30</option>
                                             <option value="5.30">5.30</option>
                                         </select>
-                                    </div>
+                                    </div>-->
                                   <!--  <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Email</p>
                                         <input type="email" placeholder="Your Email">
                                     </div>-->
                                     <div class="col-md-6 col-sm-4 col-xs-12">
                                         <p>Your Choice</p>
-                                        <select>
+                                        <select name="chioce">
                                             <option value="0">choice</option>
                                             <option value="1">綾瀬 光</option>
                                             <option value="2">如月雪夜</option>
@@ -459,7 +451,7 @@ In volutpat in metus sit amet porta.</p>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
                         <div class="section-title text-center">
-                            <h2>セラピストランキング</h2>
+                            <h2>セラピストラ</h2>
                             <p> 無店舗型性感マッサージ（無店舗型性風俗特殊営業届出済東京都公安委員会第xxxxx号）</p>
                         </div>
                     </div>
@@ -565,7 +557,85 @@ In volutpat in metus sit amet porta.</p>
             </div>
         </div>
         <!-- team-area end -->
-
+        <div class="shop-area bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                        <div class="section-title text-center">
+                            <h2>Shop</h2>
+                            <p> Sed vitae sem feugiat, condimentum ligula at, rhoncus purus. In volutpat in metus sit amet porta.
+                                Vestibulum eget lorem vitae lectus luctus consectetur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-2">
+                        <div class="shop-wrap">
+                            <div class="shop-img">
+                                <img src="images/shop/1.png" alt="">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-content">
+                                <h3><a href="shop.html">Tattoo Machine</a></h3>
+                                <p>$121.05</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-2">
+                        <div class="shop-wrap">
+                            <div class="shop-img">
+                                <img src="images/shop/2.png" alt="">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-content">
+                                <h3><a href="shop.html">Gloves</a></h3>
+                                <p>$45</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-2">
+                        <div class="shop-wrap">
+                            <div class="shop-img">
+                                <img src="images/shop/3.png" alt="">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-content">
+                                <h3><a href="shop.html">Boys Earrings</a></h3>
+                                <p>$60</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col-2">
+                        <div class="shop-wrap">
+                            <div class="shop-img">
+                                <img src="images/shop/4.png" alt="">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-content">
+                                <h3><a href="shop.html">Tatoo Ink</a></h3>
+                                <p>$75.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- footer-area start -->
         <footer class="footer-area bg-2">
             <div class="footer-top">
@@ -716,5 +786,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<!-- main js -->
         <script src="js/scripts.js"></script>
         <a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="flaticon-heart"></i></a>
+        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
     </body>
 </html>

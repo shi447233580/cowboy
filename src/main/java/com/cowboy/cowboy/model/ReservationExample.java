@@ -1,7 +1,6 @@
 package com.cowboy.cowboy.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ReservationExample {
@@ -305,53 +304,133 @@ public class ReservationExample {
             return (Criteria) this;
         }
 
-        public Criteria andTimeEqualTo(Date value) {
+        public Criteria andTimeEqualTo(String value) {
             addCriterion("time =", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotEqualTo(Date value) {
+        public Criteria andTimeNotEqualTo(String value) {
             addCriterion("time <>", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeGreaterThan(Date value) {
+        public Criteria andTimeGreaterThan(String value) {
             addCriterion("time >", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andTimeGreaterThanOrEqualTo(String value) {
             addCriterion("time >=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeLessThan(Date value) {
+        public Criteria andTimeLessThan(String value) {
             addCriterion("time <", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeLessThanOrEqualTo(Date value) {
+        public Criteria andTimeLessThanOrEqualTo(String value) {
             addCriterion("time <=", value, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeIn(List<Date> values) {
+        public Criteria andTimeLike(String value) {
+            addCriterion("time like", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeNotLike(String value) {
+            addCriterion("time not like", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeIn(List<String> values) {
             addCriterion("time in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotIn(List<Date> values) {
+        public Criteria andTimeNotIn(List<String> values) {
             addCriterion("time not in", values, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeBetween(Date value1, Date value2) {
+        public Criteria andTimeBetween(String value1, String value2) {
             addCriterion("time between", value1, value2, "time");
             return (Criteria) this;
         }
 
-        public Criteria andTimeNotBetween(Date value1, Date value2) {
+        public Criteria andTimeNotBetween(String value1, String value2) {
             addCriterion("time not between", value1, value2, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceIsNull() {
+            addCriterion("choice is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceIsNotNull() {
+            addCriterion("choice is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceEqualTo(String value) {
+            addCriterion("choice =", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceNotEqualTo(String value) {
+            addCriterion("choice <>", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceGreaterThan(String value) {
+            addCriterion("choice >", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceGreaterThanOrEqualTo(String value) {
+            addCriterion("choice >=", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceLessThan(String value) {
+            addCriterion("choice <", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceLessThanOrEqualTo(String value) {
+            addCriterion("choice <=", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceLike(String value) {
+            addCriterion("choice like", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceNotLike(String value) {
+            addCriterion("choice not like", value, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceIn(List<String> values) {
+            addCriterion("choice in", values, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceNotIn(List<String> values) {
+            addCriterion("choice not in", values, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceBetween(String value1, String value2) {
+            addCriterion("choice between", value1, value2, "choice");
+            return (Criteria) this;
+        }
+
+        public Criteria andChoiceNotBetween(String value1, String value2) {
+            addCriterion("choice not between", value1, value2, "choice");
             return (Criteria) this;
         }
     }

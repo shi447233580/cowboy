@@ -5,7 +5,8 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="INTEGER" />
-    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="choice" property="choice" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, phone, time
+    id, name, phone, time, choice
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cowboy.cowboy.model.ReservationExample" >
     select
@@ -100,9 +101,9 @@
   </delete>
   <insert id="insert" parameterType="com.cowboy.cowboy.model.Reservation" >
     insert into reservation (id, name, phone, 
-      time)
+      time, choice)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, 
-      #{time,jdbcType=TIMESTAMP})
+      #{time,jdbcType=VARCHAR}, #{choice,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cowboy.cowboy.model.Reservation" >
     insert into reservation
@@ -119,6 +120,9 @@
       <if test="time != null" >
         time,
       </if>
+      <if test="choice != null" >
+        choice,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -131,7 +135,10 @@
         #{phone,jdbcType=INTEGER},
       </if>
       <if test="time != null" >
-        #{time,jdbcType=TIMESTAMP},
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="choice != null" >
+        #{choice,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -154,7 +161,10 @@
         phone = #{record.phone,jdbcType=INTEGER},
       </if>
       <if test="record.time != null" >
-        time = #{record.time,jdbcType=TIMESTAMP},
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.choice != null" >
+        choice = #{record.choice,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -166,7 +176,8 @@
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=INTEGER},
-      time = #{record.time,jdbcType=TIMESTAMP}
+      time = #{record.time,jdbcType=VARCHAR},
+      choice = #{record.choice,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -181,7 +192,10 @@
         phone = #{phone,jdbcType=INTEGER},
       </if>
       <if test="time != null" >
-        time = #{time,jdbcType=TIMESTAMP},
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="choice != null" >
+        choice = #{choice,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -190,7 +204,8 @@
     update reservation
     set name = #{name,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=INTEGER},
-      time = #{time,jdbcType=TIMESTAMP}
+      time = #{time,jdbcType=VARCHAR},
+      choice = #{choice,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

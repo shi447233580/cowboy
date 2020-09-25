@@ -1,7 +1,5 @@
 package com.cowboy.cowboy.model;
 
-import java.util.Date;
-
 public class Reservation {
     private Integer id;
 
@@ -9,7 +7,9 @@ public class Reservation {
 
     private Integer phone;
 
-    private Date time;
+    private String time;
+
+    private String choice;
 
     public Integer getId() {
         return id;
@@ -35,11 +35,19 @@ public class Reservation {
         this.phone = phone;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setTime(String time) {
+        this.time = time == null ? null : time.trim();
+    }
+
+    public String getChoice() {
+        return choice;
+    }
+
+    public void setChoice(String choice) {
+        this.choice = choice == null ? null : choice.trim();
     }
 }
