@@ -1,7 +1,5 @@
 package com.cowboy.cowboy.manager;
 
-import com.cowboy.cowboy.dao.ReservationMapper;
-import com.cowboy.cowboy.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

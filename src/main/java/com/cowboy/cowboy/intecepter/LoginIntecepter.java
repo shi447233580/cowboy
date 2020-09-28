@@ -58,7 +58,7 @@ public class LoginIntecepter implements HandlerInterceptor {
 //			return true;
 //		}
 		response.sendRedirect("/index");  //未登录自动跳转界面
-			return false;
+			return true;
 //
 	}
 }

@@ -1,7 +1,6 @@
 package com.cowboy.cowboy.controller;
 
 import com.cowboy.cowboy.manager.ForumManager;
-import com.cowboy.cowboy.model.Reservation;
 import com.cowboy.cowboy.response.ApiResponse;
 import com.cowboy.cowboy.response.ResponseStatus;
 import org.springframework.beans.factory.annotation.Autowired;
