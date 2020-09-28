@@ -91,7 +91,7 @@ public class ForwardController {
         if (Validator.isNullOrEmpty(lsit)) {
             return "index";
         }
-        request.setAttribute("allclerk",lsit.get(0));
+        request.setAttribute("allclerk",lsit);
         return "clerkgroup";
     }
 }
