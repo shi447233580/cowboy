@@ -22,7 +22,7 @@ footer{	width: 100%; margin: 0;}
 body.bg_i1{	background-color: #46140A;}
 /*認証背景*/
 #index_body{
-    background-image: url(../img/pic/bg.jpg);
+    background-image: url(/images/bg.jpg);
     background-repeat: no-repeat;
 background-attachment: fixed;
 
@@ -33,7 +33,7 @@ background-size: cover;
 }
 /*中ページ背景*/
 #companion_body{
-    background-image: url(../img/pic/bg_page.jpg);
+    background-image: url(/images/bg_page.jpg);
     background-repeat: no-repeat;
 background-attachment: fixed;
 
@@ -44,7 +44,7 @@ background-size: cover;
 }
 /*トップページ背景*/
 #toppage_body{
-    background-image: url(../img/pic/bg_top.jpg);
+    background-image: url(/images/bg_top.jpg);
     background-repeat: no-repeat;
 background-attachment: fixed;
 
@@ -70,7 +70,7 @@ background-size: cover;
 .bg_o1{	background-color: rgba(21,111,17, 0.95);}
 .bg_p1{	background-color: rgba(64,18,9, 0.95);}
 .bg_x1{
-	background: -webkit-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) %, rgba(60,17,9, 0.95) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
 	background: -moz-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
 	background: -o-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
 	background: -ms-linear-gradient(45deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
@@ -111,7 +111,7 @@ background-size: cover;
 	display:block;
 	content:attr(title);
 	color:rgba(70,20,10,1);
-	-webkit-mask-image:-webkit-linear-gradient(top, rgba(70,20,10,0) 20%, rgba(70,20,10,1) 40%, rgba(70,20,10,0) 80%);
+	-webkit-mask-image: -webkit-linear-gradient(top, rgba(70,20,10,0) 20%, rgba(70,20,10,1) 40%, rgba(70,20,10,0) 80%);
 }
 .bg_u1{
 	background: rgba(196,150,39, 0.95); /* Old browsers */
@@ -250,7 +250,7 @@ ul#slideIcon li,
 /** individual img **/
 header.header_a{}
 header.header_b{
-	background-image: url(../img/tmp/pc_header.png);
+	background-image: url(/images/pc_header.png);
 	background-repeat: no-repeat;
 	background-position: top center;
 }
@@ -258,7 +258,7 @@ header.header_b h1{	height: 250px;}
 
 #toppage_body header.header_a,
 #toppage_body header.header_b{
-	background-image: url(../img/tmp/pc_top_header.png);
+	background-image: url(/images/pc_top_header.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -313,30 +313,30 @@ main .title , .s_title{
     body{	background: #46140A !important;}
     /*認証背景*/
 	#index_body:before{
-		background: url(../img/pic/bg_ipn.jpg) no-repeat top center;
+		background: url(/images/bg_ipn.jpg) no-repeat top center;
 		-webkit-background-size: cover;
 		background-size: cover;
     }
     /*中ページ背景*/
     #companion_body:before{
-		background: url(../img/pic/bg_ipn_page.jpg) no-repeat top center;
+		background: url(/images/bg_ipn_page.jpg) no-repeat top center;
 		-webkit-background-size: cover;
 		background-size: cover;
     }
     /*トップページ背景*/
     #toppage_body:before{
-        background: url(../img/pic/bg_ipn_top.jpg) no-repeat top center;
+        background: url(/images/bg_ipn_top.jpg) no-repeat top center;
         -webkit-background-size: cover;
         background-size: cover;
     }
 	#topimg{
-		background: url(../img/tmp/sp_header.png) center center / cover no-repeat;
+		background: url(/images/sp_header.png) center center / cover no-repeat;
 		-webkit-background-size: contain;
 		background-size: contain;
 		padding-top: calc((200 / 2) / 375 * 100%);
     }
 	#toppage_body #topimg{
-		background: url(../img/tmp/sp_top_header.png) center center / cover no-repeat;
+		background: url(/images/sp_top_header.png) no-repeat center 100%;
 		-webkit-background-size: contain;
 		background-size: contain;
 		padding-top: calc((450 / 2) / 375 * 100%);
@@ -349,7 +349,7 @@ main .title , .s_title{
 		height: calc(300px - 135px);
 	}
 	header.header_a, header.header_b,#toppage_body header.header_a,#toppage_body header.header_b{
-		background-image: url(../img/tmp/sp_logo.png);
+		background-image: url(/images/sp_logo.png);
 		background-position:10px 10px;
 		background-repeat: no-repeat;
 		-webkit-background-size: auto 35px;
@@ -398,7 +398,7 @@ main .title , .s_title{
 		background: linear-gradient(90deg, rgba(70,20,10, 0.95) 0%, rgba(60,17,9, 0.95) 49%, rgba(70,20,10, 0.95) 100%);
 	}
 	.bg_x1{
-		background: -webkit-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) %, rgba(60,17,9, 0.95) 100%);
+		background: -webkit-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 0%, rgba(60,17,9, 0.95) 100%);
 		background: -moz-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
 		background: -o-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
 		background: -ms-linear-gradient(90deg, rgba(60,17,9, 0.95) 0%, rgba(51,14,8, 0.95) 49%, rgba(60,17,9, 0.95) 100%);
